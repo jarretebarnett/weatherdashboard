@@ -20,7 +20,7 @@ function fetchCurrent() {
 
             $.ajax({
                 type: `GET`,
-                url: `http://api.openweathermap.org/data/2.5/uvi?lat=` + lat + `&lon=` + lon + `&units=imperial&appid=4fa0adbba45395f92716109bf82319d1`,
+                url: `https://api.openweathermap.org/data/2.5/uvi?lat=` + lat + `&lon=` + lon + `&units=imperial&appid=4fa0adbba45395f92716109bf82319d1`,
                 data: JSON.stringify(),
                 success: function(data) {
                     console.log('success', data);
