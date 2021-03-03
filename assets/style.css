@@ -1,0 +1,66 @@
+header {
+    font-family: 'Quicksand';
+    text-align: center;
+    color: snow;
+    background-color: #6c757d;
+    width: 100%;
+}
+
+p {
+    font-size: 10px;
+}
+
+.form-control {
+    font-family: 'Quicksand';
+}
+
+.btn {
+    font-family: 'Quicksand';
+}
+
+.list-group {
+    font-family: 'Quicksand';
+    color: #6c757d;
+    text-align: center;
+}
+
+div.col-sm-4 {
+    float: left;
+}
+
+.col-lg-8 {
+    float: right;
+}
+
+.card-body {
+    font-family: 'Quicksand';
+    color: #6c757d;
+    text-decoration: none;
+}
+
+#card-body {
+    font-family: 'Quicksand';
+    color: #6c757d;
+    text-decoration: none;
+}
+
+#fiveDayCard {
+    font-family: 'Quicksand';
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+#weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-flow: wrap;
+    text-decoration: none;
+}
