@@ -18,10 +18,12 @@ p {
     font-family: 'Quicksand';
 }
 
-.list-group {
+.list-group-item {
     font-family: 'Quicksand';
     color: #6c757d;
     text-align: center;
+    text-decoration: none;
+    border-color: snow;
 }
 
 div.col-sm-4 {

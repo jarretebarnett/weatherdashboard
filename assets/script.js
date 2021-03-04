@@ -1,10 +1,12 @@
 var searchBtn = document.querySelector(".btn");
-var cityInput = document.querySelector("#inputCity");
+var cityInput = document.querySelector(".form-control");
+var listGroupId = document.querySelector(".list-group");
+var listInput1 = document.querySelector("#search-00");
+var listInput2 = document.querySelector("#search-01");
+var listInput3 = document.querySelector("#search-02");
+var cityArr = []; 
 
 function fetchCurrent() {
-
-    console.log(cityInput.value);
-
     var requestCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInput.value + '&units=imperial&appid=4fa0adbba45395f92716109bf82319d1';
 
     fetch(requestCurrent)
@@ -85,8 +87,30 @@ function fiveDayForecast() {
     
 }
 
+function developStorage() {
+    var saveCity = document.querySelector(".form-control").value;
+
+    cityArr.push(saveCity);
+
+    localStorage.setItem("saveCity", JSON.stringify(cityArr));
+
+    renderStorage();
+}
+
+function renderStorage() {
+    listGroupId.innerHTML = "";
+
+    for (i = 0; i < cityArr.length; i++) {
+        var el = document.createElement("a");
+        el.setAttribute("class", "list-group-item");
+        el.setAttribute("href", "#");
+        el.textContent = cityArr[i];
+        listGroupId.appendChild(el);
+    }
+}
+
 searchBtn.addEventListener("click", function() {
-    
+    developStorage();
     fetchCurrent();
     fiveDayForecast();
-})
+});
