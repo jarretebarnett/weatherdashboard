@@ -101,6 +101,7 @@ function renderStorage() {
         var el = document.createElement("a");
         el.setAttribute("class", "list-group-item");
         el.setAttribute("href", "#");
+        el.setAttribute("onclick", "fetchCurrent(), fiveDayForecast()");
         el.textContent = cityArr[i];
         listGroupId.appendChild(el);
     }
