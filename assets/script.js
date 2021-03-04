@@ -100,7 +100,7 @@ function renderStorage() {
     for (i = 0; i < cityArr.length; i++) {
         var el = document.createElement("a");
         el.setAttribute("class", "list-group-item");
-        el.setAttribute("href", "#");
+        el.setAttribute("href", "index.html");
         el.setAttribute("onclick", "fetchCurrent(), fiveDayForecast()");
         el.textContent = cityArr[i];
         listGroupId.appendChild(el);
