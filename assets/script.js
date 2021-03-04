@@ -1,9 +1,6 @@
 var searchBtn = document.querySelector(".btn");
 var cityInput = document.querySelector(".form-control");
 var listGroupId = document.querySelector(".list-group");
-var listInput1 = document.querySelector("#search-00");
-var listInput2 = document.querySelector("#search-01");
-var listInput3 = document.querySelector("#search-02");
 var cityArr = []; 
 
 function fetchCurrent() {
