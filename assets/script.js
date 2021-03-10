@@ -3,8 +3,8 @@ var cityInput = document.querySelector(".form-control");
 var listGroupId = document.querySelector(".list-group");
 var cityArr = []; 
 
-function fetchCurrent() {
-    var requestCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInput.value + '&units=imperial&appid=4fa0adbba45395f92716109bf82319d1';
+function fetchCurrent(city) {
+    var requestCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=4fa0adbba45395f92716109bf82319d1';
 
     fetch(requestCurrent)
         .then(function (response) {
@@ -36,8 +36,8 @@ function fetchCurrent() {
         })
 }
 
-function fiveDayForecast() {
-    var requestFiveDay = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityInput.value + '&units=imperial&appid=4fa0adbba45395f92716109bf82319d1';
+function fiveDayForecast(city) {
+    var requestFiveDay = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=4fa0adbba45395f92716109bf82319d1';
 
     fetch(requestFiveDay)
         .then(function (response) {
@@ -98,10 +98,8 @@ function renderStorage() {
     listGroupId.innerHTML = "";
 
     for (i = 0; i < cityArr.length; i++) {
-        var el = document.createElement("a");
+        var el = document.createElement("div");
         el.setAttribute("class", "list-group-item");
-        el.setAttribute("href", "#");
-        // el.setAttribute("onclick", "fetchCurrent(), fiveDayForecast()");
         el.textContent = cityArr[i];
         listGroupId.appendChild(el);
     }
@@ -109,6 +107,13 @@ function renderStorage() {
 
 searchBtn.addEventListener("click", function() {
     developStorage();
-    fetchCurrent();
-    fiveDayForecast();
+    fetchCurrent(cityInput.value);
+    fiveDayForecast(cityInput.value);
 });
+
+listGroupId.addEventListener("click", function(e) {
+    this.textContent;
+    console.log(this.textContent);
+    fetchCurrent(e.target.textContent);
+    fiveDayForecast(e.target.textContent);
+})
